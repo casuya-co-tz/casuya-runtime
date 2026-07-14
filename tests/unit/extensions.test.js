@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { ExtensionManager } from '../../src/extensions/extension-manager.js';
 
 describe('ExtensionManager', () => {

@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { QuizAPI } from '../../src/api/quiz-api.js';
 import { GameAPI } from '../../src/api/game-api.js';
 import { StorageAPI } from '../../src/api/storage-api.js';

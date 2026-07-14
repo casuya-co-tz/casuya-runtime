@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { Runtime } from '../../src/runtime.js';
 
 describe('Runtime', () => {

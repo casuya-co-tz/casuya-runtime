@@ -1,7 +1,7 @@
 export class Sanitizer {
   constructor(options = {}) {
     this._options = {
-      allowedTags: ['a', 'b', 'i', 'em', 'strong', 'p', 'br', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'img', 'span', 'div', 'table', 'tr', 'td', 'th', 'thead', 'tbody', 'caption', 'pre', 'code', 'blockquote', 'sub', 'sup', 'hr', 'figure', 'figcaption', 'video', 'audio', 'source', 'canvas', 'details', 'summary', 'label', 'input', 'button', 'select', 'option', 'textarea', 'progress', 'meter', 'nav', 'section', 'article', 'aside', 'header', 'footer', 'main', 'mark', 'time', 'small'],
+      allowedTags: ['math', 'eq', 'chem', 'reaction', 'graph', 'physics-diagram', 'unit-conversion', 'svg', 'g', 'text', 'line', 'circle', 'rect', 'polyline', 'polygon', 'marker', 'defs', 'ellipse', 'path', 'clippath', 'lineargradient', 'radialgradient', 'a', 'b', 'i', 'em', 'strong', 'p', 'br', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'img', 'span', 'div', 'table', 'tr', 'td', 'th', 'thead', 'tbody', 'caption', 'pre', 'code', 'blockquote', 'sub', 'sup', 'hr', 'figure', 'figcaption', 'video', 'audio', 'source', 'canvas', 'details', 'summary', 'label', 'input', 'button', 'select', 'option', 'textarea', 'progress', 'meter', 'nav', 'section', 'article', 'aside', 'header', 'footer', 'main', 'mark', 'time', 'small'],
       allowedAttributes: {
         'a': ['href', 'target', 'rel'],
         'img': ['src', 'alt', 'width', 'height', 'loading'],
@@ -18,7 +18,19 @@ export class Sanitizer {
         'meter': ['value', 'min', 'max', 'low', 'high', 'optimum'],
         'time': ['datetime'],
         'td': ['colspan', 'rowspan'],
-        'th': ['colspan', 'rowspan']
+        'th': ['colspan', 'rowspan'],
+        'svg': ['width', 'height', 'viewBox', 'xmlns', 'class', 'role', 'aria-label'],
+        'g': ['class', 'transform'],
+        'text': ['x', 'y', 'text-anchor', 'fill', 'font-size', 'font-weight', 'transform'],
+        'line': ['x1', 'y1', 'x2', 'y2', 'stroke', 'stroke-width', 'stroke-dasharray', 'marker-end'],
+        'circle': ['cx', 'cy', 'r', 'fill', 'stroke', 'stroke-width'],
+        'rect': ['x', 'y', 'width', 'height', 'fill', 'stroke', 'stroke-width', 'rx', 'opacity'],
+        'polyline': ['points', 'fill', 'stroke', 'stroke-width', 'stroke-dasharray', 'stroke-linejoin'],
+        'polygon': ['points', 'fill', 'opacity'],
+        'path': ['d', 'fill', 'stroke', 'stroke-width'],
+        'ellipse': ['cx', 'cy', 'rx', 'ry', 'fill', 'stroke'],
+        'marker': ['id', 'markerWidth', 'markerHeight', 'refX', 'refY', 'orient'],
+        'defs': [],
       },
       allowedSchemes: ['http', 'https', 'mailto'],
       ...options

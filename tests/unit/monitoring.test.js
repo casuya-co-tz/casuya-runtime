@@ -7,7 +7,7 @@ describe('Monitor', () => {
   let monitor;
 
   beforeEach(() => {
-    monitor = new Monitor({ enabled: true });
+    monitor = new Monitor({ enabled: true, sampleRate: 1 });
   });
 
   afterEach(() => {

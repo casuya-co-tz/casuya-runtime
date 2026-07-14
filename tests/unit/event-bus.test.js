@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { EventBus } from '../../src/events/event-bus.js';
 
 describe('EventBus', () => {

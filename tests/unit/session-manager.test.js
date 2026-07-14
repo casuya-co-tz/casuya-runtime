@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { SessionManager } from '../../src/session-manager/session-manager.js';
 
 describe('SessionManager', () => {

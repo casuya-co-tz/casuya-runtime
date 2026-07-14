@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { StateManager } from '../../src/state-manager/state-manager.js';
 
 describe('StateManager', () => {

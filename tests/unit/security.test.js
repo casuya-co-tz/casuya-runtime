@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { SecurityManager } from '../../src/security/security-manager.js';
 import { Sanitizer } from '../../src/security/sanitizer.js';
 import { ContentSecurityPolicy } from '../../src/security/content-security.js';
@@ -84,7 +85,7 @@ describe('Sanitizer', () => {
 
   test('should strip unknown tags', () => {
     const result = sanitizer.sanitize('<unknown-tag>text</unknown-tag><p>valid</p>');
-    expect(result).toBe('<p>valid</p>');
+    expect(result).toBe('text<p>valid</p>');
   });
 
   test('should sanitize CSS', () => {

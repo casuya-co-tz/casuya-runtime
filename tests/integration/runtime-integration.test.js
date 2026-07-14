@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { Runtime } from '../../src/runtime.js';
 import { EventBus } from '../../src/events/event-bus.js';
 import { deepClone } from '../../src/utilities/object-utils.js';

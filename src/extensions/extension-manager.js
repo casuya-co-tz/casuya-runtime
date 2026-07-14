@@ -29,7 +29,7 @@ export class ExtensionManager {
         this._hooks.get(hook).push(extension[hook].bind(extension));
       }
     }
-    this._triggerHook('onLoad', { extension: extension.id, runtime: this._options.runtime });
+    this.triggerHook('onLoad', { extension: extension.id, runtime: this._options.runtime });
     this._options.eventBus?.emit('extension:registered', { id: extension.id });
     return this;
   }

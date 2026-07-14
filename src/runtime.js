@@ -111,6 +111,7 @@ export class Runtime {
 
       this._monitor?.endMark('load');
 
+      this._setState('loaded');
       this._eventBus.emit('package:loaded', { package: pkg });
       return pkg;
     } catch (err) {
@@ -174,7 +175,9 @@ export class Runtime {
 
     this._sandbox.pause();
     this._renderer.pause();
-    this._sessionManager.pause(this._currentSession.id);
+    if (this._currentSession) {
+      this._sessionManager.pause(this._currentSession.id);
+    }
 
     this._extensionManager.triggerHook('onPause', { runtime: this });
     this._eventBus.emit('runtime:paused', { session: this._currentSession });
@@ -186,7 +189,9 @@ export class Runtime {
 
     this._sandbox.resume();
     this._renderer.resume();
-    this._sessionManager.resume(this._currentSession.id);
+    if (this._currentSession) {
+      this._sessionManager.resume(this._currentSession.id);
+    }
 
     this._extensionManager.triggerHook('onResume', { runtime: this });
     this._eventBus.emit('runtime:resumed', { session: this._currentSession });

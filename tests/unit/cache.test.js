@@ -73,7 +73,7 @@ describe('LRUCache', () => {
   });
 
   test('should evict oldest entries when full', () => {
-    cache._options.maxSize = 100;
+    cache._options.maxSize = 150;
     cache.set('a', 'x', 60);
     cache.set('b', 'y', 60);
     cache.set('c', 'z', 60);

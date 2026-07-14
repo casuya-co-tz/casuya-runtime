@@ -2,6 +2,12 @@ import { PackageLoader } from '../../src/package-loader/loader.js';
 import { PackageValidator } from '../../src/package-loader/validator.js';
 import { PackageParser } from '../../src/package-loader/parser.js';
 
+if (typeof globalThis.TextEncoder === 'undefined') {
+  const util = await import('node:util');
+  globalThis.TextEncoder = util.TextEncoder;
+  globalThis.TextDecoder = util.TextDecoder;
+}
+
 describe('PackageParser', () => {
   let parser;
 

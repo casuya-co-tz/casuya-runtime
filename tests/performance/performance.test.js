@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { Timer } from '../../src/utilities/timer.js';
 import { LRUCache } from '../../src/cache/lru-cache.js';
 import { deepClone } from '../../src/utilities/object-utils.js';

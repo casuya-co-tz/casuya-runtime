@@ -63,7 +63,7 @@ export class PackageValidator {
       }
     }
     if (manifest.runtimeVersion) {
-      const versionPattern = /^[><=!~^]?\d+\.\d+\.\d+$/;
+      const versionPattern = /^[><=!~^]{1,2}\d+\.\d+\.\d+$|^\d+\.\d+\.\d+$/;
       if (!versionPattern.test(manifest.runtimeVersion.replace(/\s/g, ''))) {
         throw new Error(`Invalid runtimeVersion format: "${manifest.runtimeVersion}"`);
       }

@@ -104,6 +104,15 @@ export class AnalyticsAPI {
     this._listeners.clear();
   }
 
+  _emit(event, data) {
+    const listeners = this._listeners.get(event);
+    if (listeners) {
+      for (const listener of listeners) {
+        try { listener(data); } catch (_) { /* ignore */ }
+      }
+    }
+  }
+
   _startAutoFlush() {
     if (this._flushTimer) clearInterval(this._flushTimer);
     this._flushTimer = setInterval(() => {
