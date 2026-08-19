@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "The Lesson Player — Safely execute educational lesson packages on low-end devices",
   "type": "module",
-  "main": "src/index.js",
-  "module": "src/index.js",
+  "main": "dist/casuya-runtime.js",
+  "module": "dist/casuya-runtime.esm.js",
   "browser": "dist/casuya-runtime.min.js",
   "exports": {
     ".": {
-      "import": "./src/index.js",
+      "import": "./dist/casuya-runtime.esm.js",
       "browser": "./dist/casuya-runtime.min.js"
     }
   },
