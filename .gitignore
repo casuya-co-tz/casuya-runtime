@@ -46,3 +46,4 @@ yarn.lock
 # Test artifacts
 junit.xml
 test-results/
+.vercel
